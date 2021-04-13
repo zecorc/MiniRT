@@ -1,8 +1,7 @@
 NAME		= miniRT
 
 SRCS_LIST	= 	main.c \
-				iwu.c \
-				ray_utils.c
+				iwu.c 
 
 SRCS		= $(addprefix ${FOLDER}/, ${SRCS_LIST})
 
