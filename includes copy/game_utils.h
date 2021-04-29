@@ -13,17 +13,13 @@
 #ifndef GAME_UTILS_H
 # define GAME_UTILS_H
 
-typedef struct  s_vec2
-{
-    double x;
-    double y;
-}               t_vec2;            
+# include "./get_next_line.h"
+# include "./parse.h"
+# include "../includes/image_windows_utils.h"
+# include "./structs.h"
+# include "./atoi.h"
 
-typedef struct  s_cam
-{
-    s_vec2 eyepos;
-    s_vec2 direction;
-    s_vec2 camscreen;
-}               t_cam
+t_cam   *create_cam(t_vec2 init_pos, t_vec2 direction, t_vec2 cam_plane);
+t_vec2  *create_vec2(double x, double y);
 
 #endif

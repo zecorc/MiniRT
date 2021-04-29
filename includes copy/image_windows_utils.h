@@ -13,27 +13,13 @@
 #ifndef IMAGE_WINDOWS_UTILS_H
 # define IMAGE_WINDOWS_UTILS_H
 
+# include "./structs.h"
 # include "../mlx/mlx.h"
 # include <stdlib.h>
 # include <stdio.h>
+# include <math.h>
 
-typedef struct  s_img_data
-{
-    void    *image;
-    char    *address;
-    int     bits_per_pixel;
-    int     line_lenght;
-    int     endian;
-}               t_img_data;
-
-typedef struct  s_color_trgb
-{
-    int t;
-    int r;
-    int g;
-    int b;
-}               t_color_trgb;
-
+void            verticalStripe(t_img_data *img, int x, int drawStart, int drawEnd, int color);
 t_img_data      *create_image(int size_x, int size_y, void *mlx_image);
 void            create_image_windows(int size_x, int size_y, t_img_data *img_data, void *mlx_image);
 void            mlx_pixel_put_fast(t_img_data *img_data, int x, int y, int color);

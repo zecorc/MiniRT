@@ -10,8 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/image_windows_utils.h"
+#include "../includes/game_utils.h"
 #include <stdio.h>
+
+void    verticalStripe(t_img_data *img, int x, int drawStart, int drawEnd, int color)
+{  
+    while (drawStart <= drawEnd)
+    {
+        mlx_pixel_put_fast(img, x, drawStart, color);
+        drawStart++;
+    }
+}
 
 t_img_data  *create_image(int size_x, int size_y, void *mlx_image)
 {
@@ -54,7 +63,7 @@ int		make_color(int t, int r, int g, int b)
     b = (b > 255) ? 255 : (b < 0) ? 0 : (int)b;
 	return(t << 24 | r << 16 | g << 8 | b);
 }
-
+/*
 int		get_t(int trgb)
 {
 	return (trgb & (0xFF << 24));
@@ -74,3 +83,4 @@ int		get_b(int trgb)
 {
 	return (trgb & 0xFF);
 }
+*/
